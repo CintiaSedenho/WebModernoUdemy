@@ -96,6 +96,49 @@ console.log(soma3(), soma3(3), soma3(1, 2, 3), soma3(0, 0, 0) )
 // *** THIS PODE VARIAR *** //
 //Função arrow, vai definir a function conforme a definição que a ela for agregada
 
+const pessoa = {
+    saudacao: 'Bom dia!',
+    falar(){
+        console.log(this.saudacao)
+    }
+}
+pessoa.falar()
 
+// conflito entre paradigmas: funcional e OO
 
+const falar = pessoa.falar
+falar()
+const falarDePessoa = pessoa.falar.bind(pessoa) 
+
+/* bind amarra a função falar com o objeto pessoa
+falarDePessoa()
+
+function Pessoa(){
+    this.idade = 0
+
+    setInterval(function(){
+        this.idade++
+        console.log(this.idade)
+    }.bind(this),1000) //dispara a função a cada 1000 milisegundos, usar cntr + alt + n para iniciar e parar a função
+}
+new Pessoa 
+*/
+
+let dobro = function (a){
+    return 2 * a
+}
+console.log(dobro(Math.PI))
+
+let ola = function(){
+    return 'Olá'
+}
+console.log(ola())
+
+// função arrow é anônima. para chamá-la iterativamente é preciso armazená-la
+dobro = a => 2 * a
+console.log(dobro(Math.PI))
+
+ola = () => 'Olá' // não possui parametro
+ola = _ => 'Olá' // possui parametro
+console.log(ola())
 
