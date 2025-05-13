@@ -49,5 +49,5 @@ Evite bind em excesso; em alguns casos, funções arrow (que não têm this) sã
 Conceito			Callback										Bind
 O que é			Função passada como argumento					Método para travar o this de uma função
 Para que serve		Executar uma função mais tarde ou condicionalmente		Controlar o contexto (this) da função
-Retorno			Executa a função que você passou					Cria uma nova função com this fixado
-Exemplo comum	setTimeout(callback, 1000)							button.onclick = obj.metodo.bind(obj)
+Retorno			Executa a função que você passou				Cria uma nova função com this fixado
+Exemplo comum	  setTimeout(callback, 1000)						button.onclick = obj.metodo.bind(obj)
