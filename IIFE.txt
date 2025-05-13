@@ -1,0 +1,37 @@
+IIFE 
+Immediately Invoked Function Expression é um padrão em JavaScript onde uma função é declarada e imediatamente executada logo após sua criação.
+
+Sintaxe de uma IIFE:
+(function() {
+    console.log("Executada imediatamente!");
+})();
+
+A função está entre parênteses: (function() { ... })
+Isso transforma a função em uma expressão (e não uma declaração).
+Logo após, temos () que invoca a função imediatamente.
+
+ara que serve uma IIFE?
+Evitar poluir o escopo global:
+Tudo o que você define dentro da IIFE (variáveis, funções) fica isolado do resto do código.
+
+Criar escopos temporários:
+Útil para encapsular variáveis temporárias ou lógicas que não precisam ficar disponíveis depois.
+
+Padrão comum em bibliotecas antigas:
+Antes da introdução de módulos em JavaScript, era comum usar IIFE para encapsular bibliotecas.
+
+Exemplo prático:
+let nome = "Maria";
+
+(function() {
+    let nome = "João";
+    console.log("Dentro da IIFE:", nome); // João
+})();
+
+console.log("Fora da IIFE:", nome); // Maria
+
+Versão com parâmetros:
+(function(a, b) {
+    console.log("Soma:", a + b);
+})(3, 4); // Soma: 7
+
