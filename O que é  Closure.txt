@@ -1,0 +1,56 @@
+🧠 O que é um Closure?
+Um closure é uma função que “lembra” do ambiente (variáveis) onde foi criada, mesmo depois que esse ambiente já saiu de execução.
+Ou seja: funções internas têm acesso às variáveis da função externa, mesmo após ela ter sido executada.
+
+✅ Exemplo simples em JavaScript:
+function saudacao(nome) {
+  return function() {
+    console.log("Olá, " + nome);
+  }
+}
+const olaJoao = saudacao("João");
+olaJoao(); // Olá, João
+
+🔍 O que aconteceu aqui?
+A função saudacao retornou outra função.
+A função retornada ainda tem acesso à variável nome, mesmo que saudacao já tenha terminado.
+Isso é um closure: a função retornada "lembra" do escopo onde nasceu.
+
+📦 Para que servem closures?
+Closures são úteis para:
+Criar funções especializadas (funções que lembram de certos valores)
+Encapsular dados privados (simulando atributos privados)
+Usar em callbacks e eventos mantendo acesso a dados do contexto original
+
+🛠️ Exemplo com contadores:
+function criarContador() {
+  let count = 0;
+  return function() {
+    count++;
+    console.log(count);
+  }
+}
+const contador = criarContador();
+contador(); // 1
+contador(); // 2
+contador(); // 3
+Aqui, count é preservado entre chamadas graças ao closure.
+
+🔐 Closures e dados "privados"
+Em linguagens como JavaScript (que não tem escopo privado nativamente), closures permitem simular privacidade:
+function segredo() {
+  let dadoPrivado = "12345";
+  return {
+    revelar: function() {
+      return dadoPrivado;
+    }
+  };
+}
+const obj = segredo();
+console.log(obj.revelar()); // 12345
+
+📚 Em resumo:
+Conceito		Explicação rápida
+Closure		Uma função que “lembra” do seu escopo léxico original, mesmo após a execução do escopo externo
+Serve para	Manter estado, encapsular dados, criar funções dinâmicas, callbacks
+Usado em		JavaScript, Python, Swift, Rust, Lua, etc.

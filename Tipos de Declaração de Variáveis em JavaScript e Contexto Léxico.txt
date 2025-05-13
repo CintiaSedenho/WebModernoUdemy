@@ -1,0 +1,36 @@
+📌 Tipos de Declaração de Variáveis em JavaScript:
+
+JavaScript tem três formas principais de declarar variáveis:
+
+Tipo		Escopo		Pode reatribuir?		Pode redeclarar?	Comentário
+var		Função		✅ Sim			✅ Sim			Evite usar, é mais propensa a bugs
+let		Bloco ({})		✅ Sim			❌ Não			Mais segura e moderna
+const		Bloco ({})		❌ Não (valor fixo)	❌ Não			Para constantes ou objetos fixos
+
+🧠 O que é Contexto Léxico?
+Contexto léxico (ou escopo léxico) é o ambiente onde as variáveis e funções são declaradas e que define onde elas são acessíveis.
+Ou seja:
+Uma função tem acesso às variáveis que foram declaradas no local onde ela foi definida, e não no local onde ela é chamada.
+
+✅ Exemplo em JavaScript:
+function fora() {
+  const nome = "Lucas";
+  function dentro() {
+    console.log(nome); // 'dentro' tem acesso ao escopo de 'fora'
+  }
+  return dentro;
+}
+const func = fora(); // A função 'fora' retorna a função 'dentro'
+func(); // Lucas
+
+
+⚠️ Diferença entre escopo léxico e dinâmico:
+Léxico (JavaScript, Python, Java): a função usa o escopo onde foi escrita.
+Dinâmico (ex: algumas linguagens antigas): a função usaria o escopo de quem a chamou, o que é mais imprevisível.
+
+📚 Resumo:
+Termo			Significa
+Contexto léxico		Onde uma função/variável foi escrita no código
+Escopo léxico		As variáveis disponíveis no local da definição da função
+Usado em			JavaScript, Python, Java, C, etc.
+

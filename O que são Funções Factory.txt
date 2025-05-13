@@ -1,0 +1,41 @@
+O que são Funções Factory?
+Funções factory (ou "funções fábrica") são funções que retornam objetos (geralmente instâncias de classes ou objetos literais) em vez de simplesmente executar uma ação. Elas são muito utilizadas para criar múltiplos objetos com estrutura semelhante, mas com dados diferentes ou com alguma lógica personalizada no momento da criação.
+
+Exemplo em JavaScript
+function criarPessoa(nome, idade) {
+  return {
+    nome,
+    idade,
+    apresentar() {
+      console.log(`Olá, meu nome é ${this.nome} e tenho ${this.idade} anos.`);
+    }
+  };
+}
+
+const pessoa1 = criarPessoa('João', 30);
+const pessoa2 = criarPessoa('Maria', 25);
+
+pessoa1.apresentar(); // Olá, meu nome é João e tenho 30 anos.
+pessoa2.apresentar(); // Olá, meu nome é Maria e tenho 25 anos.
+
+Vantagens
+Mais flexível que classes simples para objetos com configurações variáveis.
+Pode encapsular lógica complexa de criação.
+Evita o uso do new (no caso de linguagens como JavaScript).
+Pode ser usada para implementar padrões de projeto, como Singleton, Decorator, entre outros.
+
+A escolha entre classe e função factory depende do contexto e do que você está tentando resolver.
+1. Função Factory: É uma função comum que retorna um objeto.Pode encapsular lógica interna de criação (padrões, valores default, composição etc.).
+
+2. Classe
+Ideal para quando você precisa de herança, métodos compartilhados, ou criar múltiplas instâncias com o mesmo protótipo/classe.
+
+✅ Comparação Rápida
+Característica				Função Factory					Classe
+Sintaxe 					✅ Simples e direta				🔶 Um pouco mais complexa
+Herança / Subclasses			❌ Não suporta nativamente		✅ Suporta
+Performance				🔶 Pode criar métodos repetidos	✅ Métodos no protótipo (JS)
+Instanciação				✅ Só chama a função			🔶 Precisa usar new (JS)
+Testabilidade / Mock			✅ Fácil de testar				✅ Também, mas pode exigir mais setup
+Compartilhamento de estado 	🔶 Precisa compor				✅ Através de herança ou protótipo
+ou lógica comum
