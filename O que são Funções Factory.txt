@@ -34,7 +34,7 @@ Característica				Função Factory				Classe
 Sintaxe 				✅ Simples e direta			🔶 Um pouco mais complexa
 Herança / Subclasses			❌ Não suporta nativamente		✅ Suporta
 Performance				🔶 Pode criar métodos repetidos	        ✅ Métodos no protótipo (JS)
-Instanciação				✅ Só chama a função			 🔶 Precisa usar new (JS)
+Instanciação				✅ Só chama a função			🔶 Precisa usar new (JS)
 Testabilidade / Mock			✅ Fácil de testar			✅ Também, mas pode exigir mais setup
-Compartilhamento de estado 	      🔶 Precisa compor				✅ Através de herança ou protótipo
+Compartilhamento de estado 	       🔶 Precisa compor				✅ Através de herança ou protótipo
 ou lógica comum
