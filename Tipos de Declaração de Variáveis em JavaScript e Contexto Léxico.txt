@@ -32,5 +32,5 @@ Dinâmico (ex: algumas linguagens antigas): a função usaria o escopo de quem a
 Termo			Significa
 Contexto léxico		Onde uma função/variável foi escrita no código
 Escopo léxico		As variáveis disponíveis no local da definição da função
-Usado em			JavaScript, Python, Java, C, etc.
+Usado em		JavaScript, Python, Java, C, etc.
 
