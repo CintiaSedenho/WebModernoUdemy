@@ -1,0 +1,38 @@
+Call & Apply
+
+call() e apply() são dois métodos que permitem invocar uma função com um valor this e argumentos especificados. 
+Eles são semelhantes, mas com uma diferença fundamental na forma como os argumentos são passados.
+
+1. call()
+Sintaxe: função.call(thisArg, arg1, arg2, ...)
+
+O método call() chama uma função com um valor específico para this e argumentos passados individualmente.
+
+Exemplo:
+function saudacao(nome, idade) {
+    console.log(`Olá, meu nome é ${nome} e eu tenho ${idade} anos.`);
+}
+saudacao.call(null, 'Alice', 25); 
+// Saída: Olá, meu nome é Alice e eu tenho 25 anos.
+Neste exemplo, a função saudacao é chamada com null como valor de this (porque não estamos usando this dentro da função) e 'Alice', 25 como argumentos individuais.
+
+2. apply()
+Sintaxe: função.apply(thisArg, [argsArray])
+
+O método apply() chama uma função com um valor específico para this e um array ou um objeto que se comporta como array de argumentos.
+
+Exemplo:
+function saudacao(nome, idade) {
+    console.log(`Olá, meu nome é ${nome} e eu tenho ${idade} anos.`);
+}
+saudacao.apply(null, ['Alice', 25]); 
+// Saída: Olá, meu nome é Alice e eu tenho 25 anos.
+Aqui, a função saudacao é chamada com null como valor de this e um array ['Alice', 25] como os argumentos.
+
+Diferença chave:
+O call() exige argumentos passados individualmente.
+O apply() exige que os argumentos sejam passados como um array (ou um objeto semelhante a um array).
+
+Quando usar:
+Use call() quando você conhece os argumentos individuais que vai passar para a função.
+Use apply() quando você tem um array de argumentos ou quando o número de argumentos for dinâmico.
