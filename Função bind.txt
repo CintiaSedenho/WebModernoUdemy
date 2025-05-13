@@ -1,0 +1,47 @@
+✅ O que é bind em JavaScript?
+bind é um método das funções em JavaScript que permite:
+
+Fixar o valor de this dentro de uma função.
+Opcionalmente pré-definir argumentos (currying parcial).
+
+📌 Quando usar bind
+Você usa bind em situações onde o valor de this pode mudar, mas você quer garantir que ele sempre aponte para um objeto específico.
+
+🧠 Exemplos práticos
+🟢 1. Manter o this correto em callbacks
+const pessoa = {
+  nome: "João",
+  falar() {
+    console.log(`Olá, meu nome é ${this.nome}`);
+  }
+};
+setTimeout(pessoa.falar, 1000); // undefined ou erro, porque perdeu o "this"
+
+
+Correção com bind:
+setTimeout(pessoa.falar.bind(pessoa), 1000); // Olá, meu nome é João
+
+
+🟢 2. Copiar funções mantendo o contexto
+function apresentar() {
+  console.log(`Sou ${this.nome}`);
+}
+const usuario = { nome: "Maria" };
+const apresentarMaria = apresentar.bind(usuario);
+apresentarMaria(); // Sou Maria
+
+
+🟢 3. Currying parcial (pré-preencher argumentos)
+function somar(a, b) {
+  return a + b;
+}
+const somar10 = somar.bind(null, 10);
+console.log(somar10(5)); // 15
+
+🛠️ Sintaxe: função.bind(thisArg[, arg1[, arg2[, ...]]])
+
+⚠️ Cuidados
+bind não executa a função. Ele retorna uma nova função com this fixado.
+Evite bind em excesso; em alguns casos, funções arrow (que não têm this) são mais apropriadas.
+
+
