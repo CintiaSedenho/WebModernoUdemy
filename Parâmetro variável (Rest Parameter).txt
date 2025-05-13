@@ -1,0 +1,20 @@
+Parâmetro variável (Rest Parameter)
+Usamos o operador ... para capturar vários argumentos em um array. É útil quando não sabemos quantos argumentos serão passados.
+
+📌 Exemplo:
+function somarTudo(...numeros) {
+    let total = 0;
+    for (let n of numeros) {
+        total += n;
+    }
+    return total;
+}
+
+console.log(somarTudo(1, 2, 3));          // 6
+console.log(somarTudo(10, 20, 30, 40));   // 100
+
+
+✅Observação:
+...numeros coleta todos os argumentos passados em um array.
+Pode haver apenas um parâmetro ...rest, e ele deve ser o último.
+
