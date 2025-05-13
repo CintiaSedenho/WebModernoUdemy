@@ -31,7 +31,7 @@ Ideal para quando você precisa de herança, métodos compartilhados, ou criar m
 
 ✅ Comparação Rápida
 Característica				Função Factory					Classe
-Sintaxe 					✅ Simples e direta				🔶 Um pouco mais complexa
+Sintaxe 				✅ Simples e direta				🔶 Um pouco mais complexa
 Herança / Subclasses			❌ Não suporta nativamente		✅ Suporta
 Performance				🔶 Pode criar métodos repetidos	✅ Métodos no protótipo (JS)
 Instanciação				✅ Só chama a função			🔶 Precisa usar new (JS)
