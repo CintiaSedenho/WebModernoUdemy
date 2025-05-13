@@ -3,8 +3,8 @@
 JavaScript tem três formas principais de declarar variáveis:
 
 Tipo			Escopo		    	Pode reatribuir?			Pode redeclarar?		Comentário
-var		  	Função		    	✅ Sim			        ✅ Sim			      	Evite usar, é mais propensa a bugs
-let		  	Bloco ({})			✅ Sim			        ❌ Não			     	 Mais segura e moderna
+var		  	Função		    	✅ Sim			          ✅ Sim			      	Evite usar, é mais propensa a bugs
+let		  	Bloco ({})			✅ Sim			          ❌ Não			     	 Mais segura e moderna
 const			Bloco ({})			❌ Não (valor fixo)		❌ Não			    	  Para constantes ou objetos fixos
 
 🧠 O que é Contexto Léxico?
